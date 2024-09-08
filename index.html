@@ -95,4 +95,54 @@ Your browser does not support the audio element.
 </center>
 <footer><center><i>Putra Wira Setya Barus - 222201018</center></footer></i>
 </body>
+<body>
+    <div class="container">
+        <h1>Formulir Pendaftaran Anggota Perpustakaan</h1>
+        <form action="submit_form.php" method="post">
+            <!-- Nama -->
+            <div class="form-group">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <!-- NIM -->
+            <div class="form-group">
+                <label for="nim">NIM:</label>
+                <input type="text" id="nim" name="nim" required>
+            </div>
+            
+            <!-- Alamat -->
+            <div class="form-group">
+                <label for="address">Alamat:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+            <!-- Jenis Kelamin -->
+            <div class="form-group">
+                <label>Jenis Kelamin:</label>
+                <input type="radio" id="male" name="gender" value="Male" required>
+                <label for="male">Pria</label>
+                <input type="radio" id="female" name="gender" value="Female" required>
+                <label for="female">Wanita</label>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- No HP -->
+            <div class="form-group">
+                <label for="phone">No HP:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Daftar</button>
+            </div>
+        </form>
+    </div>
+</body>
 </html>
