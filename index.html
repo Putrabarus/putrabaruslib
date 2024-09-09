@@ -97,6 +97,7 @@ Your browser does not support the audio element.
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-bottom: 20px;
         }
         th, td {
             border: 1px solid #ddd;
@@ -106,73 +107,74 @@ Your browser does not support the audio element.
         th {
             background-color: #f4f4f4;
         }
+        .label-cell {
+            font-weight: bold;
+            width: 30%;
+        }
+        .input-cell {
+            width: 70%;
+        }
+        .submit-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
     </style>
+</head>
 <body>
+
+<h2>Formulir Informasi</h2>
+
+<form action="/submit" method="post">
     <table>
-    <div class="container"><center>
-        <h1>Formulir Anggota Perpustakaan Program Studi Perpustakaan dan Sains Informasi</h1>
-        <form action="submit_form.php" method="post">
-            <table>
-                <tbody>
-                    <!-- Nama -->
-                    <tr>
-                        <th><label for="name">Nama:</label></th>
-                        <td><input type="text" id="name" name="name" required></td>
-                    </tr>
-                    
-                    <!-- NIM -->
-                    <tr>
-                        <th><label for="nim">NIM:</label></th>
-                        <td><input type="text" id="nim" name="nim" required></td>
-                    </tr>
-                    
-                    <!-- Alamat -->
-                    <tr>
-                        <th><label for="address">Alamat:</label></th>
-                        <td><input type="text" id="address" name="address" required></td>
-                    </tr>
-
-                    <!-- Jenis Kelamin -->
-                    <tr>
-                        <th>Jenis Kelamin:</th>
-                        <td>
-                            <input type="radio" id="male" name="gender" value="Male" required>
-                            <label for="male">Pria</label>
-                            <input type="radio" id="female" name="gender" value="Female" required>
-                            <label for="female">Wanita</label>
-                        </td>
-                    </tr>
-
-                    <!-- Email -->
-                    <tr>
-                        <th><label for="email">Email:</label></th>
-                        <td><input type="email" id="email" name="email" required></td>
-                    </tr>
-
-                    <!-- No HP -->
-                    <tr>
-                        <th><label for="phone">No HP:</label></th>
-                        <td><input type="tel" id="phone" name="phone" required></td>
-                    </tr>
-
-                    <!-- Tempat Lahir -->
-                    <tr>
-                    <th><label for="place of birth">Tempat Lahir:</label></th>
-                    <td><input type="text" id="tempat lahir" name="tempat lahir" required></td>
-
-                    <!--Tanggal Lahir-->
-                    <tr>
-                    <th><label for="date of birth">Tanggal Lahir:</label></th>
-                    <td><input type="text" id="tanggal lahir" name="tanggal lahir" required></td>
-
-                </tbody>
-            </table>
-            <div class="form-group">
-                <button type="submit">Daftar</button>
-            </div>
-        </form>
-    </div>
-</center>
+        <tr>
+            <td class="label-cell">Nama:</td>
+            <td class="input-cell"><input type="text" name="nama" required></td>
+        </tr>
+        <tr>
+            <td class="label-cell">NIM:</td>
+            <td class="input-cell"><input type="text" name="nim" required></td>
+        </tr>
+        <tr>
+            <td class="label-cell">Alamat:</td>
+            <td class="input-cell"><input type="text" name="alamat" required></td>
+        </tr>
+        <tr>
+            <td class="label-cell">Jenis Kelamin:</td>
+            <td class="input-cell">
+                <select name="jenis_kelamin" required>
+                    <option value="">Pilih Jenis Kelamin</option>
+                    <option value="Pria">Pria</option>
+                    <option value="Wanita">Wanita</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="label-cell">Email:</td>
+            <td class="input-cell"><input type="email" name="email" required></td>
+        </tr>
+        <tr>
+            <td class="label-cell">No HP:</td>
+            <td class="input-cell"><input type="tel" name="no_hp" required></td>
+        </tr>
+        <tr>
+            <td class="label-cell">Tempat Lahir:</td>
+            <td class="input-cell"><input type="text" name="tempat_lahir" required></td>
+        </tr>
+        <tr>
+            <td class="label-cell">Tanggal Lahir:</td>
+            <td class="input-cell"><input type="date" name="tanggal_lahir" required></td>
+        </tr>
     </table>
+    <button type="submit" class="submit-button">Submit</button>
+</form>
+
 </body>
 </html>
