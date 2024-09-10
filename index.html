@@ -104,53 +104,162 @@ li.dropdown {
 </center>
 </body>
 <body>
-  <div class="container">
-    <div class="table-container">
-      <h2>Tabel Bahan Buku</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Judul Buku</th>
-            <th>Pengarang</th>
-            <th>Tahun Terbit</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Buku Pertama</td>
-            <td>Penulis Pertama</td>
-            <td>2023</td>
-            <td>Tersedia</td>
-          </tr>
-          </tbody>
-      </table>
-    </div>
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Halaman Perpustakaan</h1>
 
-    <div class="form-container">
-      <h2>Form Pemesanan Buku</h2>
-      <form>
-        <label for="judul">Judul Buku:</label>
-        <input type="text" id="judul" name="judul" required>
-        <br>
-        <label for="nama">Nama Peminjam:</label>
-        <input type="text" id="nama" name="nama" required>
-        <br>
-        <button type="submit">Pesan Buku</button>
-      </form>
-    </div>
+        <!-- Tabel Bahan Buku -->
+        <div class="section">
+            <h2>Tabel Bahan Buku</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Buku</th>
+                        <th>Judul</th>
+                        <th>Pengarang</th>
+                        <th>Penerbit</th>
+                        <th>Tahun Terbit</th>
+                        <th>Ketersediaan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Belajar HTML dan CSS</td>
+                        <td>John Doe</td>
+                        <td>Gramedia</td>
+                        <td>2023</td>
+                        <td>Tersedia</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>JavaScript untuk Pemula</td>
+                        <td>Jane Smith</td>
+                        <td>Intan Pariwara</td>
+                        <td>2022</td>
+                        <td>Tersedia</td>
+                    </tr>
+                    <!-- Tambah lebih banyak data buku sesuai kebutuhan -->
+                </tbody>
+            </table>
+        </div>
 
-    <div class="form-container">
-      <h2>Form Perpanjangan Peminjaman Buku</h2>
-      <form>
-        <label for="id_peminjaman">ID Peminjaman:</label>
-        <input type="text" id="id_peminjaman" name="id_peminjaman" required>
-        <br>
-        <button type="submit">Perpanjang</button>
-      </form>
-    </div>
-  </div>
+        <!-- Form Pemesanan Buku -->
+        <div class="section">
+            <h2>Form Pemesanan Buku</h2>
+            <form action="/order" method="post">
+                <div class="form-group">
+                    <label for="nama">Nama Pemesan:</label>
+                    <input type="text" id="nama" name="nama" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="judul_buku">Judul Buku:</label>
+                    <input type="text" id="judul_buku" name="judul_buku" required>
+                </div>
+                <div class="form-group">
+                    <label for="jumlah">Jumlah:</label>
+                    <input type="number" id="jumlah" name="jumlah" min="1" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Pesan Buku</button>
+                </div>
+            </form>
+        </div>
 
-  <script src="script.js"></script>
+        <!-- Form Perpanjangan Peminjaman Buku -->
+        <div class="section">
+            <h2>Form Perpanjangan Peminjaman Buku</h2>
+            <form action="/extend" method="post">
+                <div class="form-group">
+                    <label for="nama_peminjam">Nama Peminjam:</label>
+                    <input type="text" id="nama_peminjam" name="nama_peminjam" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_buku">ID Buku:</label>
+                    <input type="text" id="id_buku" name="id_buku" required>
+                </div>
+                <div class="form-group">
+                    <label for="tanggal_perpanjang">Tanggal Perpanjangan:</label>
+                    <input type="date" id="tanggal_perpanjang" name="tanggal_perpanjang" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Perpanjang Peminjaman</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
