@@ -78,15 +78,38 @@ li.dropdown {
   </nav>
 
   <div class="content" id="tabelBahanBuku">
-    </div>
+    <table id="bahanBukuTable">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Bahan</th>
+          <th>Jumlah</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        </tbody>
+    </table>
+    <button id="tambahBahan">Tambah Bahan</button>
+  </div>
 
   <div class="content" id="formPemesananBuku">
-    </div>
+    <form id="pemesananForm">
+      <label for="judulBuku">Judul Buku:</label>
+      <input type="text" id="judulBuku" name="judulBuku" required>
+      <button type="submit">Pesan</button>
+    </form>
+  </div>
 
   <div class="content" id="formPerpanjanganBuku">
-    </div>
+    <form id="perpanjanganForm">
+      <label for="kodePeminjaman">Kode Peminjaman:</label>
+      <input type="text" id="kodePeminjaman" name="kodePeminjaman" required>
+      <button type="submit">Perpanjang</button>
+    </form>
+  </div>
 </div>
-
+    
 <div class="container"><center>
   <img src="UNNES LOGO.jpg" alt="Gambar" style="float: center; max-width: 300px; height: auto;">
 </center></div>
