@@ -105,27 +105,25 @@ li.dropdown {
 </head>
 <body>
 
-<table>
-    <tr>
-        <th>Nama</th>
-        <th>NIM</th>
-        <th>Alamat</th>
-        <th>Jenis Kelamin</th>
-        <th>Email</th>
-        <th>No HP</th>
-        <th>Tempat Lahir</th>
-        <th>Tanggal Lahir</th>
-    </tr>
-    <tr>
-        <td>Masukkan Nama</td>
-        <td>Masukkan NIM</td>
-        <td>Masukkan Alamat</td>
-        <td>Masukkan Jenis Kelamin</td>
-        <td>Masukkan Email</td>
-        <td>Masukkan No HP</td>
-        <td>Masukkan Tempat Lahir</td>
-        <td>Masukkan Tanggal Lahir</td>
-    </tr>
-</table>
+<form>
+    <table>
+        <tr>
+            <th>Nama</th>
+            <td><input type="text" name="nama"></td>
+        </tr>
+        <tr>
+            <th>NIM</th>
+            <td><input type="text" name="nim"></td>
+        </tr>
+        <tr>
+            <th>Tanggal Lahir</th>
+            <td><input type="date" name="tanggal_lahir"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;"><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+
 </body>
 </html>
