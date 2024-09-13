@@ -89,11 +89,12 @@ li.dropdown {
 </center>
 </body>
 <head>
-    <title>Formulir Anggota Perpustakaan Program Studi Perpustakaan dan Sains Informasi</title>
+    <title>Formulir Data Diri</title>
     <style>
         table {
             border-collapse: collapse;
-            margin: 0 auto; /* Membuat tabel berada di tengah */
+            margin: 0 auto;
+            width: 50%; /* Sesuaikan lebar tabel */
         }
 
         th, td {
@@ -101,25 +102,59 @@ li.dropdown {
             padding: 8px;
             text-align: left;
         }
+
+        input[type="submit"] {
+            background-color: #4CAF50; /* Warna hijau */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
-<form>
-    <table>
+<form action="proses_data.php" method="post"> <table>
         <tr>
             <th>Nama</th>
-            <td><input type="text" name="nama"></td>
+            <td><input type="text" name="nama" required></td>
         </tr>
         <tr>
             <th>NIM</th>
-            <td><input type="text" name="nim"></td>
+            <td><input type="text" name="nim" required></td>
+        </tr>
+        <tr>
+            <th>Alamat</th>
+            <td><textarea name="alamat" rows="4" required></textarea></td>
+        </tr>
+        <tr>
+            <th>Jenis Kelamin</th>
+            <td>
+                <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki
+                <input type="radio" name="jenis_kelamin" value="Perempuan">   
+ Perempuan
+            </td>
+        </tr>
+        <tr>   
+
+            <th>Email</th>
+            <td><input type="email" name="email" required></td>
+        </tr>
+        <tr>
+            <th>No HP</th>
+            <td><input type="tel" name="no_hp" required></td>
+        </tr>
+        <tr>
+            <th>Tempat Lahir</th>
+            <td><input type="text" name="tempat_lahir" required></td>
         </tr>
         <tr>
             <th>Tanggal Lahir</th>
-            <td><input type="date" name="tanggal_lahir"></td>
+            <td><input type="date" name="tanggal_lahir" required></td>
         </tr>
-        <tr>
+        <tr>   
+
             <td colspan="2" style="text-align:center;"><input type="submit" value="Submit"></td>
         </tr>
     </table>
