@@ -271,42 +271,75 @@ li.dropdown {
     </style>
 </head>
 
+ <title>Formulir Pemesanan Buku</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
 <body>
-    <h2>Formulir Pemesanan Buku</h2>
-    <form>
-        <label for="nama">Nama Lengkap:</label>
-        <input type="text" id="nama" name="nama">
-
-        <label for="nomor_anggota">Nomor Anggota Perpustakaan:</label>
-        <input type="text" id="nomor_anggota" name="nomor_anggota">
-
-        <label for="tanggal_pemesanan">Tanggal Pemesanan:</label>
-        <input type="date" id="tanggal_pemesanan" name="tanggal_pemesanan">
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-
-        <label for="nomor_telepon">Nomor Telepon:</label>
-        <input type="tel" id="nomor_telepon" name="nomor_telepon">
-
-        <label for="jenis_kelamin">Jenis Kelamin:</label>
-        <select id="jenis_kelamin" name="jenis_kelamin">
-            <option value="laki-laki">Laki-laki</option>
-            <option value="perempuan">Perempuan</option>   
-
-        </select>   
-
-
-        <label for="penulis">Penulis Buku:</label>
-        <input type="text" id="penulis" name="penulis">
-
-        <label for="isbn">Nomor ISBN:</label>
-        <input type="text" id="isbn" name="isbn">
-
-        <label for="judul_buku">Judul Buku yang Dipesan:</label>
-        <input type="text" id="judul_buku" name="judul_buku">
-
-        <input type="submit" value="Submit">
+    <h1><center>Formulir Pemesanan Buku</center>/h1>
+    <form action="/submit" method="post">
+        <table>
+            <tr>
+                <th>Nama Lengkap</th>
+                <td><input type="text" name="nama_lengkap" required></td>
+            </tr>
+            <tr>
+                <th>Nomor Anggota Perpustakaan</th>
+                <td><input type="text" name="nomor_anggota" required></td>
+            </tr>
+            <tr>
+                <th>Tanggal Pemesanan</th>
+                <td><input type="date" name="tanggal_pemesanan" required></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <th>Nomor Telepon</th>
+                <td><input type="tel" name="nomor_telepon" required></td>
+            </tr>
+            <tr>
+                <th>Jenis Kelamin</th>
+                <td>
+                    <select name="jenis_kelamin" required>
+                        <option value="">Pilih Jenis Kelamin</option>
+                        <option value="laki-laki">Laki-laki</option>
+                        <option value="perempuan">Perempuan</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Penulis Buku</th>
+                <td><input type="text" name="penulis_buku" required></td>
+            </tr>
+            <tr>
+                <th>Nomor ISBN</th>
+                <td><input type="text" name="nomor_isbn" required></td>
+            </tr>
+            <tr>
+                <th>Judul Buku yang Dipesan</th>
+                <td><input type="text" name="judul_buku" required></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Kirim">
     </form>
 </body>
 
