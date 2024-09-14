@@ -180,14 +180,17 @@ li.dropdown {
 <head>
     <title>Tabel Buku</title>
     <style>
-        table, th, td {
-            border: 1px solid black;
+        table {
             border-collapse: collapse;
-            padding: 15px;
-            text-align: center;
+            width: 100%; /* Sesuaikan lebar tabel sesuai kebutuhan */
+        }
+
+        th, td {
+            border: none; /* Hilangkan garis tepi sel */
+            padding: 8px;
+            text-align: left;
         }
     </style>
-</head>
 
 <body>
 <form action="proses_data.php" method="post">
