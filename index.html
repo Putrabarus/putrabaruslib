@@ -309,41 +309,51 @@ li.dropdown {
 </body>
 
 <body>
-    <h1><center>Formulir Perpanjangan Peminjaman Buku</center></h1>
-    <form action="/submit-perpanjangan" method="post">
-        <table>
+<form action="proses_data.php" method="post">
+    <table>
+        <thead>
+        <tr style="background-color: #4863A0; text-align: center;">
+    <th colspan="2" style="color: white;">Formulir Pemanjangan Peminjaman Buku</th>
+</tr>
+     </thead>
+        <tbody>
             <tr>
-                <th>Nama</th>
-                <td><input type="text" name="nama" required></td>
-            </tr>
-            <tr>
-                <th>Nomor Anggota Perpustakaan</th>
-                <td><input type="text" name="nomor_anggota" required></td>
-            </tr>
-            <tr>
-                <th>Tanggal Peminjaman</th>
-                <td><input type="date" name="tanggal_peminjaman" required></td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td><input type="email" name="email" required></td>
-            </tr>
-            <tr>
-                <th>Nomor Telepon</th>
-                <td><input type="tel" name="nomor_telepon" required></td>
-            </tr>
-            <tr>
-                <th>Nomor ISBN</th>
-                <td><input type="text" name="nomor_isbn" required></td>
-            </tr>
-            <tr>
-                <th>Tanggal Perpanjangan Buku</th>
-                <td><input type="date" name="tanggal_perpanjangan" required></td>
-            </tr>
-        </table>
-        <br>
-        <input type="submit" value="Kirim">
-    </form>
+            <th>Nama</th>
+            <td><input type="text" name="nama" required></td>
+        </tr>
+        <tr>
+            <th>Nomor Anggota Perpustakaan</th>
+            <td><input type="text" name="nomor anggota perpustakaan" required></td>
+        </tr>
+        <tr>
+            <th>Tanggal Peminjaman</th>
+            <td><textarea name="tanggal peminjaman" rows="4" required></textarea></td>
+        </tr>
+        <tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="text" name="email" required></td>
+        </tr>
+	<tr>
+            <th>No Telepon</th>
+            <td><textarea name="email" rows="4" required></textarea></td>
+        </tr>
+
+       <tr>
+            <th>No ISBN</th>
+            <td><input type="text" name="no_isbn" required></td>
+        </tr>
+        <tr>
+            <th>Tanggal Perpanjangan Buku</th>
+            <td><input type="text" name="tanggal perpanjangan buku" required></td>
+        </tr>
+        
+
+            <td colspan="2" style="text-align:center;"><input type="submit" value="Submit"></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
 </body>
 
 </html>
