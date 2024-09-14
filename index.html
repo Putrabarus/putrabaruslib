@@ -246,6 +246,37 @@ li.dropdown {
 </table>
 </body>
 
+<head>
+    <title>Formulir Pemesanan Buku</title>
+    <style>
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulir Pemesanan Buku</h2>
+    <form>
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama">
 
+        <label for="nomor_anggota">Nomor Anggota Perpustakaan:</label>
+        <input type="text" id="nomor_anggota" name="nomor_anggota">
+
+        <label for="jenis_kelamin">Jenis Kelamin:</label>
+        <select id="jenis_kelamin" name="jenis_kelamin">
+            <option value="laki-laki">Laki-laki</option>
+            <option value="perempuan">Perempuan</option>   
+
+        </select>
+
+        <input type="submit" value="Submit">   
+
+    </form>
+</body>
 
 </html>
