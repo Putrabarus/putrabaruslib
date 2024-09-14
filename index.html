@@ -342,4 +342,42 @@ li.dropdown {
     </form>
 </body>
 
+<body>
+    <h1><center>Formulir Perpanjangan Peminjaman Buku</center></h1>
+    <form action="/submit-perpanjangan" method="post">
+        <table>
+            <tr>
+                <th>Nama</th>
+                <td><input type="text" name="nama" required></td>
+            </tr>
+            <tr>
+                <th>Nomor Anggota Perpustakaan</th>
+                <td><input type="text" name="nomor_anggota" required></td>
+            </tr>
+            <tr>
+                <th>Tanggal Peminjaman</th>
+                <td><input type="date" name="tanggal_peminjaman" required></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <th>Nomor Telepon</th>
+                <td><input type="tel" name="nomor_telepon" required></td>
+            </tr>
+            <tr>
+                <th>Nomor ISBN</th>
+                <td><input type="text" name="nomor_isbn" required></td>
+            </tr>
+            <tr>
+                <th>Tanggal Perpanjangan Buku</th>
+                <td><input type="date" name="tanggal_perpanjangan" required></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Kirim">
+    </form>
+</body>
+
 </html>
