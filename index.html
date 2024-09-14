@@ -172,4 +172,60 @@ li.dropdown {
     </table>
 </form>
 </body>
+
+<head>
+    <title>Sistem Perpustakaan</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 33%; /* Setiap tabel akan mengambil 33% lebar layar */
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Sistem Perpustakaan</h2>
+
+<div style="display: flex;">
+    <h3>Tabel Bahan Buku</h3>
+    <table>
+        <tr>
+            <th>No.</th>
+            <th>Bahan</th>
+            <th>Spesifikasi</th>
+            <th>Jumlah</th>
+            <th>Satuan</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Kertas</td>
+            <td>HVS 80 gsm</td>
+            <td>1000</td>
+            <td>Lembar</td>
+        </tr>
+        </table>
+
+    <h3>Form Pemesanan Buku</h3>
+    <form>
+        <label for="nama">Nama Lengkap:</label><br>
+        <input type="text" id="nama" name="nama"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h3>Form Perpanjangan Peminjaman</h3>
+    <form>
+        <label for="nama_perpanjangan">Nama:</label><br>
+        <input type="text" id="nama_perpanjangan" name="nama_perpanjangan"><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+
 </html>
