@@ -246,24 +246,67 @@ li.dropdown {
 </table>
 </body>
 
-  <style>
-        table {
-            width: 80%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        .form-group {
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
+<body>
+<form action="proses_data.php" method="post">
+    <table>
+        <thead>
+        <tr style="background-color: #4863A0; text-align: center;">
+    <th colspan="2" style="color: white;">Formulir Pemesanan Buku</th>
+</tr>
+     </thead>
+        <tbody>
+            <tr>
+            <th>Nama</th>
+            <td><input type="text" name="nama" required></td>
+        </tr>
+        <tr>
+            <th>Nomor Anggota Perpustakaan</th>
+            <td><input type="text" name="nomor anggota perpustakaan" required></td>
+        </tr>
+        <tr>
+            <th>Tanggal Pemesanan</th>
+            <td><textarea name="tanggal pemesanan" rows="4" required></textarea></td>
+        </tr>
+        <tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="text" name="email" required></td>
+        </tr>
+	<tr>
+            <th>No Telepon</th>
+            <td><textarea name="email" rows="4" required></textarea></td>
+        </tr>
+
+        <tr>
+
+            <th>Jenis Kelamin</th>
+            <td>
+                <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki
+                <input type="radio" name="jenis_kelamin" value="Perempuan">   
+ Perempuan
+            </td>
+        </tr>
+        <tr>   
+
+            <th>Penulis Buku</th>
+            <td><input type="text" name="penulis buku" required></td>
+        </tr>
+        <tr>
+            <th>No ISBN</th>
+            <td><input type="text" name="no_isbn" required></td>
+        </tr>
+        <tr>
+            <th>Judul Buku yang Dipesan</th>
+            <td><input type="text" name="judul buku yang dipesan" required></td>
+        </tr>
+        
+
+            <td colspan="2" style="text-align:center;"><input type="submit" value="Submit"></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
 
 <body>
     <h1><center>Formulir Perpanjangan Peminjaman Buku</center></h1>
