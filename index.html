@@ -1,67 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perpustakaan Putra Wira Setya Barus</title>
-  <link rel="stylesheet" href="style.css">  
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: white;
-      margin: 0;
-      padding: 20px;
-    }
-    .logo {
-      width: 150px;
-    }
-    .introduction, .library-image, .media {
-      background-color: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    h2, h5 {
-      color: #333;
-    }
-    footer {
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Perpustakaan Putra Wira Setya Barus</title>
+    <!-- css link -->
+    <link rel="stylesheet"> <a href="style.css"></a></link>
 </head>
+
 <body>
+<style>
+    
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
 
-  <header class="container">
-    <center>
-      <img src="UNNES LOGO.jpg" alt="Gambar" class="logo">
-    </center>
-  </header>
+li {
+  float: left;
+}
 
-  <main>
-    <section class="introduction">
-      <h2>Perkenalan</h2>
-      <p style="color: rgba(47, 44, 44, 0.777);">Perkenalkan, nama saya Putra Wira Setya Barus dengan NIM 222201018. Saya adalah mahasiswa dari Program Studi D3 Perpustakaan, Fakultas Vokasi, Universitas Sumatera Utara. Ini merupakan homepage perpustakaan pertama saya, untuk memenuhi tugas dari mata kuliah <b>Pemrograman Web</b>, yang diampu oleh Ibu Himma Dewiyana ST., M.Hum.
-      Jika ingin mengetahui informasi lebih detail mengenai Perpustakaan UNNES, berikut saya berikan link resmi menuju <a href="https://unnes.ac.id/library/">website perpustakaan UNNES</a>.</p>
-    </section>
-  </main>
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-    <section class="library-image">
-      <center>
-        <img src="https://unnes.ac.id/library/wp-content/uploads/sites/24/2023/02/DSC08100-scaled-2-700x450.jpg" alt="Perpustakaan UNNES">
-      <p class="library-title"><i>Perpustakaan UNNES</i></p>
-    </center> </section>
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
 
-    <section class="media">
-	<center>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/6yF0nQGsftM?si=qstK2Y6QJIS2iuHT&amp;start=8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <p class="video-title"><i>Video Profil Perpustakaan UNNES</i></p>
-      <audio controls>
-        <source src="Hindia - No One Will Find Me (Lyric Video) [Unofficial].mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </section>
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+    
+<div class="container"><center>
+  <img src="UNNES LOGO.jpg" alt="Gambar" style="float: center; max-width: 300px; height: auto;">
+</center></div>
+
+<p style="font-size: 20px"><h-2><b>Perkenalan</b></h2></p>
+<p style="font-size: 23px"><p style="margin-bottom: 50px">Perkenalkan, nama saya Putra Wira Setya Barus dengan NIM 222201018. Saya adalah mahasiswa dari Program Studi D3 Perpustakaan, Fakultas Vokasi, Universitas Sumatera Utara. Ini merupakan perpustakaan
+<i>homepage pertama</i> saya, untuk memenuhi tugas dari mata kuliah <b>Pemrograman Web</b>, yang diampu oleh Ibu Himma Dewiyana ST., M.Hum. Jika ingin mengetahui informasi lebih detail mengenai Perpustakaan UNNES, berikut saya berikan link resmi menuju <b><i><a> href=https://unnes.ac.id/library/> website perpustakaan UNNES</a></i></b>.
+</p>
+<h-4><center><img src="https://unnes.ac.id/library/wp-content/uploads/sites/24/2023/02/DSC08100-scaled-2-700x450.jpg" style="box-shadow: 3px 3px 3px rgba(0,0,0,0.8)" alt=/></h4>
+</p>
+<p style="margin-bottom: 50px">
+    <font color="black"><h-5><i>Perpustakaan UNNES</i></h5></font>
+</p>
+</left>
+<p style="margin-bottom: 50px">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6yF0nQGsftM?si=qstK2Y6QJIS2iuHT&amp;start=8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><h-6>Video Profil Perpustakaan UNNES</h6></p>
+ <p style="margin-bottom: 50px">
+<audio controls>
+  <source src="Hindia - No One Will Find Me (Lyric Video) [Unofficial].mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+</p>
 </center>
 </body>
 
