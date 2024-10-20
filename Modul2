@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Perpustakaan Putra Wira Setya Barus</title>
+    <!-- css link -->
+    <link rel="stylesheet"> <a href="style.css"></a></link>
+</head>
+
+<body>
+<style>
+    
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+<head>
+    <title>Formulir Data Diri</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 0 auto; /* Membuat tabel berada di tengah */
+            width: 400px; /* Atur lebar tabel di sini */
+            height: 200px; /* Atur tinggi tabel di sini */
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<head>
+    <title>Tabel dengan Jarak</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px; /* Atur jarak antara tabel */
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+<form action="proses_data.php" method="post">
+    <table>
+        <thead>
+        <tr style="background-color: #4863A0; text-align: center;">
+    <th colspan="2" style="color: white;"><center>Formulir Anggota Perpustakaan Program Studi Perpustakaan dan Sains Informasi</center></th>
+</tr>
+     </thead>
+        <tbody>
+            <tr>
+            <th>Nama</th>
+            <td><input type="text" name="nama" required></td>
+        </tr>
+        <tr>
+            <th>NIM</th>
+            <td><input type="text" name="nim" required></td>
+        </tr>
+        <tr>
+            <th>Alamat</th>
+            <td><textarea name="alamat" rows="4" required></textarea></td>
+        </tr>
+        <tr>
+            <th>Jenis Kelamin</th>
+            <td>
+                <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki
+                <input type="radio" name="jenis_kelamin" value="Perempuan">   
+ Perempuan
+            </td>
+        </tr>
+        <tr>   
+            <th>Email</th>
+            <td><input type="email" name="email" required></td>
+        </tr>
+        <tr>
+            <th>No HP</th>
+            <td><input type="tel" name="no_hp" required></td>
+        </tr>
+        <tr>
+            <th>Tempat Lahir</th>
+            <td><input type="text" name="tempat_lahir" required></td>
+        </tr>
+        <tr>
+            <th>Tanggal Lahir</th>
+            <td><input type="date" name="tanggal_lahir" required></td>
+        </tr>
+        <tr>   
+
+            <td colspan="2" style="text-align:center;"><input type="submit" value="Submit"></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+
+<head>
+    <title>Tabel Bahan Buku</title>
+	<body>
+<form action="proses_data.php" method="post">
+    <table>
+        <thead>
+        <tr style="background-color: #4863A0; text-align: center;">
+		<th colspan="2" style="color: white;"><center>Tabel Bahan Buku</center></th>
+     </thead>
+        <tbody>
+  <tr>
+    <th>No.</th>
+    <th>Judul Buku</th>
+    <th>Pengarang</th>
+    <th>Penerbit</th>
+    <th>Tahun Terbit</th>
+    <th>ISBN</th>
+    <th>Catatan</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Laskar Pelangi</td>
+    <td>Andrea Hirata</td>
+    <td>Bentang Pustaka</td>
+    <td>2005</td>
+    <td>979-709-834-9</td>
+    <td>Novel</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Sapiens: A Brief History of Humankind</td>
+    <td>Yuval Noah Harari</td>
+    <td>Detik</td>
+    <td>2014</td>
+    <td>978-602-420-060-8</td>
+    <td>Non-fiksi</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Atomic Habits</td>
+    <td>James Clear</td>
+    <td>Gramedia Pustaka Utama</td>
+    <td>2018</td>
+    <td>978-602-03-2648-1</td>
+    <td>Self-help</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Dilan 1990</td>
+    <td>Pidi Baiq</td>
+    <td>Mizan</td>
+    <td>2014</td>
+    <td>978-979-413-956-0</td>
+    <td>Novel remaja</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Negeri 5 Menara</td>
+    <td>Ahmad Fuadi</td>
+    <td>Republika</td>
+    <td>2009</td>
+    <td>978-979-1103-72-5</td>
+    <td>Novel remaja</td>
+  </tr>
+</table>
+</body>
+
+<body>
+<form action="proses_data.php" method="post">
+    <table>
+        <thead>
+        <tr style="background-color: #4863A0; text-align: center;">
+    <th colspan="2" style="color: white;"><center>Formulir Pemesanan Buku</center></th>
+</tr>
+     </thead>
+        <tbody>
+            <tr>
+            <th>Nama</th>
+            <td><input type="text" name="nama" required></td>
+        </tr>
+        <tr>
+            <th>Nomor Anggota Perpustakaan</th>
+            <td><input type="text" name="nomor anggota perpustakaan" required></td>
+        </tr>
+        <tr>
+            <th>Tanggal Pemesanan</th>
+            <td><textarea name="tanggal pemesanan" rows="4" required></textarea></td>
+        </tr>
+        <tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="text" name="email" required></td>
+        </tr>
+	<tr>
+            <th>No Telepon</th>
+            <td><textarea name="email" rows="4" required></textarea></td>
+        </tr>
+        <tr>
+            <th>Jenis Kelamin</th>
+            <td>
+                <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki
+                <input type="radio" name="jenis_kelamin" value="Perempuan">   
+ Perempuan
+            </td>
+        </tr>
+        <tr>   
+            <th>Penulis Buku</th>
+            <td><input type="text" name="penulis buku" required></td>
+        </tr>
+        <tr>
+            <th>No ISBN</th>
+            <td><input type="text" name="no_isbn" required></td>
+        </tr>
+        <tr>
+            <th>Judul Buku yang Dipesan</th>
+            <td><input type="text" name="judul buku yang dipesan" required></td>
+        </tr>
+            <td colspan="2" style="text-align:center;"><input type="submit" value="Submit"></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+
+<body>
+<form action="proses_data.php" method="post">
+    <table>
+        <thead>
+        <tr style="background-color: #4863A0; text-align: center;">
+    <th colspan="2" style="color: white;"><center>Formulir Perpanjangan Peminjaman Buku</center></th>
+</tr>
+     </thead>
+        <tbody>
+            <tr>
+            <th>Nama</th>
+            <td><input type="text" name="nama" required></td>
+        </tr>
+        <tr>
+            <th>Nomor Anggota Perpustakaan</th>
+            <td><input type="text" name="nomor anggota perpustakaan" required></td>
+        </tr>
+        <tr>
+            <th>Tanggal Peminjaman</th>
+            <td><textarea name="tanggal peminjaman" rows="4" required></textarea></td>
+        </tr>
+        <tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="text" name="email" required></td>
+        </tr>
+	<tr>
+            <th>No Telepon</th>
+            <td><textarea name="email" rows="4" required></textarea></td>
+        </tr>
+       <tr>
+            <th>No ISBN</th>
+            <td><input type="text" name="no_isbn" required></td>
+        </tr>
+        <tr>
+            <th>Tanggal Perpanjangan Buku</th>
+            <td><input type="text" name="tanggal perpanjangan buku" required></td>
+        </tr>
+            <td colspan="2" style="text-align:center;"><input type="submit" value="Submit"></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>
+
