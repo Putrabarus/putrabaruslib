@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        #search {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        main {
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #fff;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        li:hover {
+            background: #eaeaea;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var books = [
+                "Harry Potter dan Batu Bertuah",
+                "Harry Potter dan Kamar Rahasia",
+                "Dasar-Dasar Pemrograman Web",
+                "Belajar JavaScript untuk Pemula",
+                "Pengantar Data Science"
+            ];
+
+            $('#search').autocomplete({
+                source: books
+            });
+
+            $('#search').on('keyup', function() {
+                var query = $(this).val().toLowerCase();
+                $('#book-list li').filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(query) > -1);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Perpustakaan Digital</h1>
+        <input type="text" id="search" placeholder="Cari buku...">
+    </header>
+    <main>
+        <ul id="book-list">
+            <li>Harry Potter dan Batu Bertuah</li>
+            <li>Harry Potter dan Kamar Rahasia</li>
+            <li>Dasar-Dasar Pemrograman Web</li>
+            <li>Belajar JavaScript untuk Pemula</li>
+            <li>Pengantar Data Science</li>
+        </ul>
+    </main>
+</body>
+</html>
