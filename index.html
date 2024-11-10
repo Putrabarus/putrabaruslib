@@ -7,7 +7,7 @@
   <title>Perpustakaan Putra Wira Setya Barus</title>
   <link rel="stylesheet" href="style.css">
   
-  <style>
+   <style>
     nav {
         background-color: #f2f2f2;
         overflow: hidden;
@@ -63,10 +63,17 @@
     nav .dropdown:hover .dropdown-content {
         display: block;
     }
-</style>
-</head>
-<body>
 
+    /* Ensure no bullets appear */
+    nav div {
+        list-style-type: none; /* Removes the bullets */
+        padding: 0; /* Removes any padding */
+        margin: 0; /* Removes any margin */
+    }
+  </style>
+</head>
+	
+<body>
  <nav>
 <div><a href="index.html">Home</a></div>
 <li class="dropdown">
