@@ -9,35 +9,25 @@
             background-color: #f2f2f2;
             overflow: hidden;
         }
-    
-        nav ul {
-            list-style-type: none; /* Menghilangkan titik di menu */
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-    
-        nav li {
-            position: relative;
-        }
-    
+
         nav a {
-            display: block;
+            float: left;
             color: black;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
             font-size: 17px;
         }
-    
+
         nav a:hover {
             background-color: #ddd;
         }
-    
+
         nav .dropdown {
-            position: relative;
+            float: left;
+            overflow: hidden;
         }
-    
+
         nav .dropdown .dropbtn {
             font-size: 17px;
             border: none;
@@ -47,9 +37,8 @@
             background-color: inherit;
             font-family: inherit;
             margin: 0;
-            cursor: pointer;
         }
-    
+
         nav .dropdown-content {
             display: none;
             position: absolute;
@@ -58,36 +47,36 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
-    
+
         nav .dropdown-content a {
+            float: none;
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
             text-align: left;
         }
-    
+
         nav .dropdown:hover .dropdown-content {
             display: block;
         }
-    
-        /* Style tambahan */
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
             background-color: #f4f4f4;
         }
-    
+
         h1, h2 {
             color: #2c3e50;
             border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
         }
-    
+
         #daftar-buku {
             background-color: white;
             border-radius: 5px;
@@ -95,7 +84,16 @@
             margin-bottom: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-    
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Updated styles for the book slider */
         .slider-container {
             position: relative;
             width: 100%;
@@ -106,21 +104,21 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-    
+
         .slider {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
-    
+
         .slide {
-            flex: 0 0 33.333%; /* Show 3 books at a time */
+            flex: 0 0 33.333%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             padding: 20px 10px;
         }
-    
+
         .slide .book-image-container {
             width: 180px;
             height: 270px;
@@ -132,17 +130,30 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             transition: transform 0.3s ease;
         }
-    
+
         .slide .book-image-container:hover {
             transform: scale(1.05);
         }
-    
+
         .slide img {
             max-width: 100%;
             max-height: 100%;
             object-fit: cover;
         }
-    
+
+        .slide h3 {
+            font-size: 18px;
+            margin: 5px 0;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .slide p {
+            font-size: 14px;
+            color: #7f8c8d;
+            text-align: center;
+        }
+
         .prev, .next {
             position: absolute;
             top: 50%;
@@ -157,220 +168,235 @@
             transition: background-color 0.3s ease;
             border-radius: 50%;
         }
-    
+
         .prev:hover, .next:hover {
             background-color: rgba(52, 152, 219, 1);
         }
-    
+
         .prev { left: 10px; }
         .next { right: 10px; }
-        </style>
-    </head>
-    <body>
-    
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <button class="dropbtn">Dropdown</button>
-                    <div class="dropdown-content">
-                        <a href="kolom1modul4.html">Kolom 1</a>
-                        <a href="kolom2modul4.html">Kolom 2</a>
-                        <a href="kolom3modul4.html">Kolom 3</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <button class="dropbtn">Modul</button>
-                    <div class="dropdown-content">
-                        <a href="Modul1.html">modul 1</a>
-                        <a href="Modul2.html">modul 2</a>
-                        <a href="Modul3.html">modul 3</a>
-                        <a href="Modul4.html">modul 4</a>
-                        <a href="Modul5.html">modul 5</a>
-                        <a href="Modul6.html">modul 6</a>
-                        <a href="#">modul 7</a>
-                        <a href="#">modul 8</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
 
-    <h1>Selamat Datang di Perpustakaan Online</h1>
-
-    <div id="daftar-buku"></div>
-
-    <!-- Pindahkan fitur pencarian ke sini -->
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Cari judul atau pengarang buku...">
-        <button id="searchButton">Cari</button>
-    </div>
-    <div id="searchResults"></div>
-
-    <h1 style="text-align: center;">Pameran Buku</h1>
-
-    <div class="slider-container">
-        <div class="slider" id="bookSlider"></div>
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
-    </div>
-
-    <h2>Cara Menampilkan Data dalam JavaScript</h2>
-    <p>Ada beberapa cara untuk menampilkan data dalam JavaScript di halaman web:</p>
-    <ol>
-        <li>Menggunakan innerHTML: Kita dapat mengubah konten HTML dari suatu elemen dengan properti innerHTML.</li>
-        <li>Menggunakan document.write(): Metode ini menulis langsung ke dokumen HTML, tetapi sebaiknya dihindari karena dapat menimpa konten yang ada.</li>
-        <li>Menggunakan console.log(): Berguna untuk debugging, menampilkan data di konsol browser.</li>
-        <li>Menggunakan alert(): Menampilkan data dalam bentuk pop-up alert.</li>
-    </ol>
-
-    <script>
-        const buku = ["Belajar JavaScript", "Algoritma dan Struktur Data", "Kecerdasan Buatan"];
-
-        // Menampilkan daftar buku ke dalam elemen dengan ID "daftar-buku"
-        const daftarBukuElement = document.getElementById("daftar-buku");
-        let daftarBukuHTML = "<ul>";
-        for (let i = 0; i < buku.length; i++) {
-            daftarBukuHTML += "<li>" + buku[i] + "</li>";
+        /* Styles for search feature */
+        .search-container {
+            margin-bottom: 20px;
+            text-align: center;
         }
-        daftarBukuHTML += "</ul>";
-        daftarBukuElement.innerHTML = daftarBukuHTML;
 
-        // New slider script
-        const books = [
-            { title: "Dasar-Dasar Java", author: "Jane Smith", image: "javascript.jpeg" },
-            { title: "Pengantar Basis Data", author: "Mary Johnson", image: "pengantar.jpeg" },
-            { title: "Algoritma & Struktur Data", author: "Alice Brown", image: "algoritma.jpeg" },
-            { title: "Pemrograman Web", author: "John Doe", image: "pemerograman.jpeg" },
-            { title: "Sistem Basis Data", author: "Bob White", image: "basis.jpg" },
-            { title: "Machine Learning", author: "Andrew Ng", image: "mini_magick20200726-28038-12ew6pm.png" }
-        ];
+        #searchInput {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
 
-        let currentSlide = 0;
-        const slider = document.getElementById('bookSlider');
+        #searchButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
 
-        function createSlides() {
-            books.forEach((book, index) => {
-                const slide = document.createElement('div');
-                slide.className = 'slide';
-                slide.innerHTML = `
-                    <div class="book-image-container">
-                        <img src="${book.image}" alt="${book.title}">
-                    </div>
-                    <h3>${book.title}</h3>
-                    <p>Pengarang: ${book.author}</p>
-                `;
-                slider.appendChild(slide);
-            });
+        #searchResults {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="kolom1modul4.html">Kolom 1</a>
+            <a href="kolom2modul4.html">Kolom 2</a>
+            <a href="kolom3modul4.html">Kolom 3</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Modul</button>
+        <div class="dropdown-content">
+            <a href="Modul1.html">Modul 1</a>
+            <a href="Modul2.html">Modul 2</a>
+            <a href="Modul3.html">Modul 3</a>
+            <a href="Modul4.html">Modul 4</a>
+            <a href="Modul5.html">Modul 5</a>
+            <a href="Modul6.html">Modul 6</a>
+            <a href="#">Modul 7</a>
+            <a href="#">Modul 8</a>
+        </div>
+    </div>
+</nav>
+
+<h1>Selamat Datang di Perpustakaan Online</h1>
+
+<div id="daftar-buku"></div>
+
+<!-- Pindahkan fitur pencarian ke sini -->
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Cari judul atau pengarang buku...">
+    <button id="searchButton">Cari</button>
+</div>
+<div id="searchResults"></div>
+
+<h1 style="text-align: center;">Pameran Buku</h1>
+
+<div class="slider-container">
+    <div class="slider" id="bookSlider"></div>
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+</div>
+
+<h2>Cara Menampilkan Data dalam JavaScript</h2>
+<p>Ada beberapa cara untuk menampilkan data dalam JavaScript di halaman web:</p>
+<ol>
+    <li>Menggunakan innerHTML: Kita dapat mengubah konten HTML dari suatu elemen dengan properti innerHTML.</li>
+    <li>Menggunakan document.write(): Metode ini menulis langsung ke dokumen HTML, tetapi sebaiknya dihindari karena dapat menimpa konten yang ada.</li>
+    <li>Menggunakan console.log(): Berguna untuk debugging, menampilkan data di konsol browser.</li>
+    <li>Menggunakan alert(): Menampilkan data dalam bentuk pop-up alert.</li>
+</ol>
+
+<script>
+    const buku = ["Belajar JavaScript", "Algoritma dan Struktur Data", "Kecerdasan Buatan"];
+
+    // Menampilkan daftar buku ke dalam elemen dengan ID "daftar-buku"
+    const daftarBukuElement = document.getElementById("daftar-buku");
+    let daftarBukuHTML = "<ul>";
+    for (let i = 0; i < buku.length; i++) {
+        daftarBukuHTML += "<li>" + buku[i] + "</li>";
+    }
+    daftarBukuHTML += "</ul>";
+    daftarBukuElement.innerHTML = daftarBukuHTML;
+
+    // New slider script
+    const books = [
+        { title: "Dasar-Dasar Java", author: "Jane Smith", image: "javascript.jpeg" },
+        { title: "Pengantar Basis Data", author: "Mary Johnson", image: "pengantar.jpeg" },
+        { title: "Algoritma & Struktur Data", author: "Alice Brown", image: "algoritma.jpeg" },
+        { title: "Pemrograman Web", author: "John Doe", image: "pemerograman.jpeg" },
+        { title: "Sistem Basis Data", author: "Bob White", image: "basis.jpg" },
+        { title: "Machine Learning", author: "Andrew Ng", image: "mini_magick20200726-28038-12ew6pm.png" }
+    ];
+
+    let currentSlide = 0;
+    const slider = document.getElementById('bookSlider');
+
+    function createSlides() {
+        books.forEach((book, index) => {
+            const slide = document.createElement('div');
+            slide.className = 'slide';
+            slide.innerHTML = `
+                <div class="book-image-container">
+                    <img src="${book.image}" alt="${book.title}">
+                </div>
+                <h3>${book.title}</h3>
+                <p>Pengarang: ${book.author}</p>
+            `;
+            slider.appendChild(slide);
+        });
+        updateSlider();
+    }
+
+    function updateSlider() {
+        const slideWidth = slider.clientWidth / 3; // Show 3 books at a time
+        const offset = currentSlide * slideWidth;
+        slider.style.transform = `translateX(-${offset}px)`;
+
+        // Update button states
+        updateButtonStates();
+    }
+
+    function changeSlide(direction) {
+        const totalSlides = books.length - 2; // Subtract 2 because we show 3 books at a time
+        const newSlide = currentSlide + direction;
+
+        if (newSlide >= 0 && newSlide <= totalSlides) {
+            currentSlide = newSlide;
             updateSlider();
         }
+    }
 
-        function updateSlider() {
-            const slideWidth = slider.clientWidth / 3; // Show 3 books at a time
-            const offset = currentSlide * slideWidth;
-            slider.style.transform = `translateX(-${offset}px)`;
+    function updateButtonStates() {
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        const totalSlides = books.length - 2;
 
-            // Update button states
-            updateButtonStates();
+        prevButton.disabled = currentSlide === 0;
+        nextButton.disabled = currentSlide === totalSlides;
+
+        prevButton.style.opacity = prevButton.disabled ? 0.5 : 1;
+        nextButton.style.opacity = nextButton.disabled ? 0.5 : 1;
+    }
+
+    function updateDaftarBuku() {
+        const daftarBukuElement = document.getElementById("daftar-buku");
+        let daftarBukuHTML = "<h2>Daftar Buku</h2><ul>";
+        books.forEach(book => {
+            daftarBukuHTML += `<li>${book.title}</li>`;
+        });
+        daftarBukuHTML += "</ul>";
+        daftarBukuElement.innerHTML = daftarBukuHTML;
+    }
+
+    function init() {
+        createSlides();
+        updateButtonStates();
+        updateDaftarBuku();
+    }
+
+    init();
+
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+    const searchResults = document.getElementById('searchResults');
+
+    function searchBooks() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        if (searchTerm === '') {
+            searchResults.innerHTML = ''; // Clear previous results if search is empty
+            return;
         }
 
-        function changeSlide(direction) {
-            const totalSlides = books.length - 2; // Subtract 2 because we show 3 books at a time
-            const newSlide = currentSlide + direction;
+        const results = books.filter(book =>
+            book.title.toLowerCase().includes(searchTerm) ||
+            book.author.toLowerCase().includes(searchTerm)
+        );
 
-            if (newSlide >= 0 && newSlide <= totalSlides) {
-                currentSlide = newSlide;
-                updateSlider();
-            }
-        }
+        displaySearchResults(results);
+    }
 
-        function updateButtonStates() {
-            const prevButton = document.querySelector('.prev');
-            const nextButton = document.querySelector('.next');
-            const totalSlides = books.length - 2;
-
-            prevButton.disabled = currentSlide === 0;
-            nextButton.disabled = currentSlide === totalSlides;
-
-            prevButton.style.opacity = prevButton.disabled ? 0.5 : 1;
-            nextButton.style.opacity = nextButton.disabled ? 0.5 : 1;
-        }
-
-        function updateDaftarBuku() {
-            const daftarBukuElement = document.getElementById("daftar-buku");
-            let daftarBukuHTML = "<h2>Daftar Buku</h2><ul>";
-            books.forEach(book => {
-                daftarBukuHTML += `<li>${book.title}</li>`;
+    function displaySearchResults(results) {
+        if (results.length === 0) {
+            searchResults.innerHTML = '<p>Buku tidak ditemukan.</p>';
+        } else {
+            let resultsHTML = '<h3>Hasil Pencarian:</h3><ul>';
+            results.forEach(book => {
+                resultsHTML += `
+                    <li>
+                        <strong>${book.title}</strong> oleh ${book.author}
+                        <img src="${book.image}" alt="${book.title}" style="width: 100px; height: 150px; object-fit: cover;">
+                    </li>
+                `;
             });
-            daftarBukuHTML += "</ul>";
-            daftarBukuElement.innerHTML = daftarBukuHTML;
+            resultsHTML += '</ul>';
+            searchResults.innerHTML = resultsHTML;
         }
+    }
 
-        function init() {
-            createSlides();
-            updateButtonStates();
-            updateDaftarBuku();
+    searchButton.addEventListener('click', searchBooks);
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            searchBooks();
         }
+    });
 
-        init();
-
-        // Update existing event listeners for manual navigation
-        document.querySelector('.prev').addEventListener('click', () => {
-            changeSlide(-1);
-        });
-
-        document.querySelector('.next').addEventListener('click', () => {
-            changeSlide(1);
-        });
-
-        // Remove auto-scroll functionality
-        // startAutoScroll();
-        // slider.addEventListener('mouseenter', stopAutoScroll);
-        // slider.addEventListener('mouseleave', startAutoScroll);
-
-        // Search functionality
-        const searchInput = document.getElementById('searchInput');
-        const searchButton = document.getElementById('searchButton');
-        const searchResults = document.getElementById('searchResults');
-
-        function searchBooks() {
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            if (searchTerm === '') {
-                searchResults.innerHTML = ''; // Clear previous results if search is empty
-                return;
-            }
-            
-            const results = books.filter(book => 
-                book.title.toLowerCase().includes(searchTerm) || 
-                book.author.toLowerCase().includes(searchTerm)
-            );
-
-            displaySearchResults(results);
-        }
-
-        function displaySearchResults(results) {
-            if (results.length === 0) {
-                searchResults.innerHTML = '<p>Buku tidak ditemukan.</p>'; // Show notification when no books are found
-            } else {
-                let resultsHTML = '<h3>Hasil Pencarian:</h3><ul>';
-                results.forEach(book => {
-                    resultsHTML += `
-                        <li>
-                            <strong>${book.title}</strong> oleh ${book.author}
-                            <img src="${book.image}" alt="${book.title}" style="width: 100px; height: 150px; object-fit: cover;">
-                        </li>
-                    `;
-                });
-                resultsHTML += '</ul>';
-                searchResults.innerHTML = resultsHTML;
-            }
-        }
-
-        searchButton.addEventListener('click', searchBooks);
-        searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                searchBooks();
-            }
-        });
-    </script>
+</script>
 </body>
 </html>
