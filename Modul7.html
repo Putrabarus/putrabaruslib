@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari Belajar PHP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .day-item {
+            font-size: 18px;
+            margin: 8px 0;
+            padding: 10px;
+            background-color: #d1e7f5;
+            border: 1px solid #b0c4de;
+            border-radius: 5px;
+            width: 100%;
+            text-align: left;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Daftar Hari Belajar PHP</h1>
+    <div class="container" id="daysContainer"></div>
+
+    <script>
+        // Fungsi untuk menampilkan hari-hari belajar PHP
+        function displayDays() {
+            const container = document.getElementById('daysContainer');
+            for (let i = 1; i <= 1000; i++) {
+                const dayItem = document.createElement('div');
+                dayItem.classList.add('day-item');
+                dayItem.textContent = `Ini adalah hari ke-${i} belajar PHP`;
+                container.appendChild(dayItem);
+            }
+        }
+
+        // Panggil fungsi untuk menampilkan hari-hari
+        displayDays();
+    </script>
+
+</body>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        input[type="number"], select {
+            padding: 8px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Kalkulator</h2>
+        <input type="number" id="bilangan1" placeholder="Masukkan bilangan pertama">
+        <input type="number" id="bilangan2" placeholder="Masukkan bilangan kedua">
+        <select id="operasi">
+            <option value="tambah">Tambah</option>
+            <option value="kurang">Kurang</option>
+            <option value="kali">Kali</option>
+            <option value="bagi">Bagi</option>
+        </select>
+        <button onclick="hitung()">Hitung</button>
+    </div>
+
+    <script>
+        function hitung() {
+            const bilangan1 = parseFloat(document.getElementById('bilangan1').value);
+            const bilangan2 = parseFloat(document.getElementById('bilangan2').value);
+            const operasi = document.getElementById('operasi').value;
+
+            if (isNaN(bilangan1) || isNaN(bilangan2)) {
+                alert("Masukkan bilangan yang valid.");
+                return;
+            }
+
+            // Menyusun URL dengan parameter untuk halaman hasil
+            const url = `hasil.html?bilangan1=${bilangan1}&bilangan2=${bilangan2}&operasi=${operasi}`;
+            window.location.href = url;  // Arahkan ke halaman hasil
+        }
+    </script>
+
+</body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        input[type="text"], input[type="password"] {
+            padding: 8px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Masukkan username">
+        <input type="password" id="password" placeholder="Masukkan password">
+        <button onclick="login()">Login</button>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        function login() {
+            // Ambil nilai username dan password yang diinput oleh user
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Definisikan ID dan password yang valid
+            const validUsername = "admin";
+            const validPassword = "12345";
+
+            // Validasi input
+            if (username === "" || password === "") {
+                document.getElementById('message').innerText = "Input tidak lengkap, harap masukkan username dan password.";
+                return;
+            }
+
+            // Cek apakah username dan password sesuai
+            if (username === validUsername && password === validPassword) {
+                document.getElementById('message').innerText = "Login sukses!";
+                document.getElementById('message').style.color = "green";
+            } else {
+                document.getElementById('message').innerText = "Login gagal, ID atau password salah.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
