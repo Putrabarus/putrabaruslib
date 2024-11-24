@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hari Belajar PHP</title>
+    <title>Belajar PHP, Kalkulator, dan Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,11 +14,13 @@
             flex-direction: column;
             align-items: center;
         }
+
         .container {
             max-width: 800px;
             margin-top: 20px;
             padding: 20px;
         }
+
         .day-item {
             font-size: 18px;
             margin: 8px 0;
@@ -29,59 +31,24 @@
             width: 100%;
             text-align: left;
         }
+
         h1 {
             font-size: 24px;
             color: #333;
             margin-top: 20px;
         }
-    </style>
-</head>
-<body>
 
-    <h1>Daftar Hari Belajar PHP</h1>
-    <div class="container" id="daysContainer"></div>
-
-    <script>
-        // Fungsi untuk menampilkan hari-hari belajar PHP
-        function displayDays() {
-            const container = document.getElementById('daysContainer');
-            for (let i = 1; i <= 1000; i++) {
-                const dayItem = document.createElement('div');
-                dayItem.classList.add('day-item');
-                dayItem.textContent = `Ini adalah hari ke-${i} belajar PHP`;
-                container.appendChild(dayItem);
-            }
-        }
-
-        // Panggil fungsi untuk menampilkan hari-hari
-        displayDays();
-    </script>
-
-</body>
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f9;
-            margin: 0;
-        }
-        .container {
+        /* Kalkulator styling */
+        .kalkulator-container {
             background-color: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
-            width: 300px;
+            width: 400px; /* Increased width */
+            margin-top: 20px;
         }
+
         input[type="number"], select {
             padding: 8px;
             margin: 10px 0;
@@ -89,6 +56,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         button {
             padding: 10px 15px;
             background-color: #4CAF50;
@@ -97,14 +65,44 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #45a049;
+        }
+
+        /* Login form styling */
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px; /* Increased width */
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="password"] {
+            padding: 8px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: red;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <h1>Daftar Hari Belajar PHP</h1>
+    <div class="container" id="daysContainer"></div>
+
+    <div class="kalkulator-container">
         <h2>Kalkulator</h2>
         <input type="number" id="bilangan1" placeholder="Masukkan bilangan pertama">
         <input type="number" id="bilangan2" placeholder="Masukkan bilangan kedua">
@@ -117,7 +115,32 @@
         <button onclick="hitung()">Hitung</button>
     </div>
 
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Masukkan username">
+        <input type="password" id="password" placeholder="Masukkan password">
+        <button onclick="login()">Login</button>
+        <div id="message" class="message"></div>
+    </div>
+
     <script>
+        // Fungsi untuk menampilkan hari-hari belajar PHP
+        function displayDays() {
+            const container = document.getElementById('daysContainer');
+            container.innerHTML = '';
+
+            for (let i = 1; i <= 1000; i++) {
+                const dayItem = document.createElement('div');
+                dayItem.classList.add('day-item');
+                dayItem.textContent = `Ini adalah hari ke-${i} belajar PHP`;
+                container.appendChild(dayItem);
+            }
+        }
+
+        // Panggil fungsi untuk menampilkan hari-hari
+        displayDays();
+
+        // Fungsi Kalkulator
         function hitung() {
             const bilangan1 = parseFloat(document.getElementById('bilangan1').value);
             const bilangan2 = parseFloat(document.getElementById('bilangan2').value);
@@ -128,89 +151,23 @@
                 return;
             }
 
-            // Menyusun URL dengan parameter untuk halaman hasil
-            const url = `hasilkalkulator.html?bilangan1=${bilangan1}&bilangan2=${bilangan2}&operasi=${operasi}`;
-            window.location.href = url;  // Arahkan ke halaman hasil
+            const url = `hasil.html?bilangan1=${bilangan1}&bilangan2=${bilangan2}&operasi=${operasi}`;
+            window.location.href = url;
         }
-    </script>
 
-</body>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Login</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f9;
-            margin: 0;
-        }
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 300px;
-        }
-        input[type="text"], input[type="password"] {
-            padding: 8px;
-            margin: 10px 0;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .message {
-            margin-top: 20px;
-            font-size: 16px;
-            font-weight: bold;
-            color: red;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <h2>Login</h2>
-        <input type="text" id="username" placeholder="Masukkan username">
-        <input type="password" id="password" placeholder="Masukkan password">
-        <button onclick="login()">Login</button>
-        <div id="message" class="message"></div>
-    </div>
-
-    <script>
+        // Fungsi Login
         function login() {
-            // Ambil nilai username dan password yang diinput oleh user
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // Definisikan ID dan password yang valid
             const validUsername = "admin";
             const validPassword = "12345";
 
-            // Validasi input
             if (username === "" || password === "") {
                 document.getElementById('message').innerText = "Input tidak lengkap, harap masukkan username dan password.";
                 return;
             }
 
-            // Cek apakah username dan password sesuai
             if (username === validUsername && password === validPassword) {
                 document.getElementById('message').innerText = "Login sukses!";
                 document.getElementById('message').style.color = "green";
@@ -221,5 +178,4 @@
     </script>
 
 </body>
-
 </html>
