@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perpustakaan Putra Wira Setya Barus</title>
   <link rel="stylesheet" href="style.css">
@@ -64,145 +64,139 @@
         display: block;
     }
 
-    /* Ensure no bullets appear */
-    nav div {
-        list-style-type: none; /* Removes the bullets */
-        padding: 0; /* Removes any padding */
-        margin: 0; /* Removes any margin */
+    /* Tabel Formulir */
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #4863A0;
+        color: white;
+    }
+
+    td {
+        background-color: #f9f9f9;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"], input[type="date"], textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-top: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    .form-title {
+        text-align: center;
+        background-color: #4863A0;
+        color: white;
+        padding: 10px;
+        font-size: 20px;
+        margin-bottom: 20px;
     }
   </style>
 </head>
-	
 <body>
- <nav>
-<div><a href="index.html">Home</a></div>
-<li class="dropdown">
-    <button class="dropbtn">Dropdown</button>
-    <div class="dropdown-content">
-        <a href="kolom1modul4.html">Kolom 1</a>
-        <a href="kolom2modul4.html">Kolom 2</a>
-        <a href="kolom3modul4.html">Kolom 3</a>
-    </div></li>
+
+  <nav>
+    <div><a href="index.html">Home</a></div>
     <div class="dropdown">
-    <button class="dropbtn">Modul</button>
-    <div class="dropdown-content">
-        <a href="Modul1.html">modul 1</a>
-        <a href="Modul2.html">modul 2</a>
-        <a href="Modul3.html">modul 3</a>
-	<a href="Modul4.html">modul 4</a>
-	<a href="Modul5.html">modul 5</a>
-	<a href="Modul6.html">modul 6</a>
-	<a href="#">modul 7</a>
-	<a href="#">modul 8</a>
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="kolom1modul4.html">Kolom 1</a>
+            <a href="kolom2modul4.html">Kolom 2</a>
+            <a href="kolom3modul4.html">Kolom 3</a>
+        </div>
     </div>
-</div>
-</nav>
-</body>
-	
-<body>
-<style> 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
+    <div class="dropdown">
+        <button class="dropbtn">Modul</button>
+        <div class="dropdown-content">
+            <a href="Modul1.html">modul 1</a>
+            <a href="Modul2.html">modul 2</a>
+            <a href="Modul3.html">modul 3</a>
+            <a href="Modul4.html">modul 4</a>
+            <a href="Modul5.html">modul 5</a>
+            <a href="Modul6.html">modul 6</a>
+            <a href="#">modul 7</a>
+            <a href="#">modul 8</a>
+        </div>
+    </div>
+  </nav>
 
-li {
-  float: left;
-}
-
-li a, .dropbtn {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
-
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-</style>
-<body>
-<form action="proses_data.php" method="post">
+  <form action="proses_data.php" method="post">
+    <div class="form-title">Formulir Anggota Perpustakaan Program Studi Perpustakaan dan Sains Informasi</div>
     <table>
         <thead>
-        <tr style="background-color: #4863A0; text-align: center;">
-    <th colspan="2" style="color: white;"><center>Formulir Anggota Perpustakaan Program Studi Perpustakaan dan Sains Informasi</center></th>
-</tr>
-     </thead>
+            <tr>
+                <th colspan="2">Formulir Anggota</th>
+            </tr>
+        </thead>
         <tbody>
             <tr>
-            <th>Nama</th>
-            <td><input type="text" name="nama" required></td>
-        </tr>
-        <tr>
-            <th>NIM</th>
-            <td><input type="text" name="nim" required></td>
-        </tr>
-        <tr>
-            <th>Alamat</th>
-            <td><textarea name="alamat" rows="4" required></textarea></td>
-        </tr>
-        <tr>
-            <th>Jenis Kelamin</th>
-            <td>
-                <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki
-                <input type="radio" name="jenis_kelamin" value="Perempuan">   
- Perempuan
-            </td>
-        </tr>
-        <tr>   
-            <th>Email</th>
-            <td><input type="email" name="email" required></td>
-        </tr>
-        <tr>
-            <th>No HP</th>
-            <td><input type="tel" name="no_hp" required></td>
-        </tr>
-        <tr>
-            <th>Tempat Lahir</th>
-            <td><input type="text" name="tempat_lahir" required></td>
-        </tr>
-        <tr>
-            <th>Tanggal Lahir</th>
-            <td><input type="date" name="tanggal_lahir" required></td>
-        </tr>
-        <tr>   
-
-            <td colspan="2" style="text-align:center;"><input type="submit" value="Submit"></td>
-        </tr>
+                <th>Nama</th>
+                <td><input type="text" name="nama" required></td>
+            </tr>
+            <tr>
+                <th>NIM</th>
+                <td><input type="text" name="nim" required></td>
+            </tr>
+            <tr>
+                <th>Alamat</th>
+                <td><textarea name="alamat" rows="4" required></textarea></td>
+            </tr>
+            <tr>
+                <th>Jenis Kelamin</th>
+                <td>
+                    <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki
+                    <input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan
+                </td>
+            </tr>
+            <tr>   
+                <th>Email</th>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <th>No HP</th>
+                <td><input type="tel" name="no_hp" required></td>
+            </tr>
+            <tr>
+                <th>Tempat Lahir</th>
+                <td><input type="text" name="tempat_lahir" required></td>
+            </tr>
+            <tr>
+                <th>Tanggal Lahir</th>
+                <td><input type="date" name="tanggal_lahir" required></td>
+            </tr>
+            <tr>   
+                <td colspan="2" style="text-align:center;">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
         </tbody>
     </table>
-</form>
+  </form>
+
 </body>
 </html>
